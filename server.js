@@ -20,14 +20,24 @@ app.get('/app/rpsls', (req, res) => {
 app.get('/app/rps/play/', (req, res) => {
     res.status(200).send(rps(req.query.shot));          
 });
-app.get('/app/rps/play/', (req, res) => {   
+app.post('/app/rps/play/', (req, res) => {   
     res.status(200).send(rps(req.body.shot));           //POST
 });
 app.get('/app/rps/play/:shot', (req, res) => {
     res.status(200).send(rps(req.params.shot)); 
+});
+app.get('/app/rpsls/play/', (req, res) => {
+    res.status(200).send(rpsls(req.query.shot));          
+});
+app.post('/app/rpsls/play/', (req, res) => {   
+    res.status(200).send(rpsls(req.body.shot));          
+});
+app.get('/app/rpsls/play/:shot', (req, res) => {
+    res.status(200).send(rpsls(req.params.shot)); 
 });
 
 
 
 
 app.listen(port);
+console.log("Server on port ${port}");
