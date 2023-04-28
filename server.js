@@ -18,8 +18,15 @@ app.get('/app/rpsls', (req, res) => {
     res.status(200).send(rpsls()); 
 });
 app.get('/app/rps/play/', (req, res) => {
-    res.status(200).send(rps(req.query.shot)); 
+    res.status(200).send(rps(req.query.shot));          
 });
+app.get('/app/rps/play/', (req, res) => {   
+    res.status(200).send(rps(req.body.shot));           //POST
+});
+app.get('/app/rps/play/:shot', (req, res) => {
+    res.status(200).send(rps(req.params.shot)); 
+});
+
 
 
 
